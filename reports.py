@@ -27,6 +27,8 @@ def decide(file_name, year):
         years.append(data[2])
     if str(year) in years:
         return True
+    else:
+        return False
 
 
 # returns the title of the latest game_stat
