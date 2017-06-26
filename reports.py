@@ -6,8 +6,11 @@ def build_database(file_name):
         for line in lines:
             line = line.split("\t")
             database.append(line)
-        del database[-1]  # last line is always empty therefore the last list would be empty as well
-        return database
+        database_clean = []
+        for data in database:  # if there are empty lines, there will be lists with a single string in the result list
+            if data != [""]:   # this loop fixes the problem
+                database_clean.append(data)
+        return database_clean
 
 
 # counts games (basically the lines) in the given source
